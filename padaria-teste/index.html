@@ -441,4 +441,276 @@
             font-size: 2rem;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
             z-index: 999;
-            transition: var(--transition
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: var(--whatsapp-dark);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Responsividade */
+        @media (max-width: 968px) {
+            .hero-grid, .sobre-grid, .contato-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero {
+                padding: 130px 0 60px;
+                text-align: center;
+            }
+
+            .hero-content .btn {
+                margin: 0 auto;
+            }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 20px;
+                box-shadow: var(--shadow);
+                text-align: center;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Padaria<span>Teste</span></a>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio" class="nav-link">Início</a></li>
+                    <li><a href="#produtos" class="nav-link">Destaques</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#contato" class="nav-link">Localização & Contato</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>O sabor do pão fresco todos os dias em <span>Mogi Guaçu</span></h1>
+                <p>Receitas artesanais feitas com carinho, ingredientes selecionados e aquele aroma irresistível que transforma o seu dia.</p>
+                <a href="https://wa.me/5519999999999" target="_blank" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Fazer Pedido pelo WhatsApp
+                </a>
+            </div>
+            <div class="hero-card">
+                <i class="fas fa-bread-slice"></i>
+                <h3>Peça sem sair de casa!</h3>
+                <p>Garanta seus pães quentinhos, bolos e delícias fresquinhas direto pelo nosso WhatsApp.</p>
+                <a href="https://wa.me/5519999999999" target="_blank" class="btn btn-primary" style="width: 100%;">
+                    Encomendar Agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Produtos/Destaques -->
+    <section class="produtos" id="produtos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossas Delícias</h2>
+                <p>Tudo preparado diariamente para levar qualidade e sabor até a sua mesa.</p>
+            </div>
+            <div class="produtos-grid">
+                <div class="produto-card">
+                    <div class="produto-icon">
+                        <i class="fas fa-bread-slice"></i>
+                    </div>
+                    <div class="produto-info">
+                        <h3>Pães Fresquinhos</h3>
+                        <p>Pão francês crocante por fora e macio por dentro, saindo do forno várias vezes ao dia.</p>
+                        <a href="https://wa.me/5519999999999" target="_blank" class="btn btn-primary" style="width: 100%; font-size: 0.9rem; padding: 10px;">Pedir no WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="produto-card">
+                    <div class="produto-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <div class="produto-info">
+                        <h3>Bolos & Doces</h3>
+                        <p>Bolos caseiros recheados, tortas finas e doces tradicionais para adoçar a sua tarde.</p>
+                        <a href="https://wa.me/5519999999999" target="_blank" class="btn btn-primary" style="width: 100%; font-size: 0.9rem; padding: 10px;">Pedir no WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="produto-card">
+                    <div class="produto-icon">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <div class="produto-info">
+                        <h3>Cafés & Salgados</h3>
+                        <p>Salgados assados e fritos na hora, acompanhados daquele café fresquinho e encorpado.</p>
+                        <a href="https://wa.me/5519999999999" target="_blank" class="btn btn-primary" style="width: 100%; font-size: 0.9rem; padding: 10px;">Pedir no WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section class="sobre" id="sobre">
+        <div class="container sobre-grid">
+            <div class="sobre-text">
+                <h2>Tradição e Qualidade em Mogi Guaçu</h2>
+                <p>Na Padaria Teste, acreditamos que a comida une as pessoas. Por isso, mantemos o compromisso de entregar produtos de altíssima qualidade, com um atendimento acolhedor que faz você se sentir em casa.</p>
+                <p>Venha nos visitar ou faça seu pedido com comodidade através do nosso canal de atendimento rápido no WhatsApp.</p>
+                
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i> Ingredientes Selecionados
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i> Produção Diária
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i> Atendimento Ágil
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i> Ambiente Acolhedor
+                    </div>
+                </div>
+            </div>
+            <div class="sobre-box-visual">
+                <i class="fas fa-store"></i>
+                <h3>Padaria Teste</h3>
+                <p>O ponto de encontro ideal para o seu café da manhã ou da tarde.</p>
+                <a href="https://wa.me/5519999999999" target="_blank" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Fale Conosco
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato / Localização -->
+    <section class="contato" id="contato">
+        <div class="container">
+            <div class="section-title">
+                <h2>Localização & Contato</h2>
+                <p>Venha nos fazer uma visita ou entre em contato para encomendas especiais.</p>
+            </div>
+            <div class="contato-grid">
+                <div class="info-card">
+                    <h3>Informações</h3>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>Endereço sob consulta, Mogi Guaçu - SP</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horário de Atendimento</h4>
+                            <p>Horário comercial</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>(19) 99999-9999</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 30px;">
+                        <a href="https://wa.me/5519999999999" target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+                            <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe src="https://maps.google.com/maps?q=Endere%C3%A7o%20sob%20consulta%20Mogi%20Gua%EF%BF%BDu&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Padaria Teste - Mogi Guaçu / SP. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/5519999999999" target="_blank" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript Essencial -->
+    <script>
+        // Menu Mobile Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Fechar menu mobile ao clicar em um link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = hamburger.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+    </script>
+</body>
+</html>
